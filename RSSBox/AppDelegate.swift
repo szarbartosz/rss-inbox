@@ -39,6 +39,20 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         let intervalMinutes = UserDefaults.standard.integer(forKey: "pollIntervalMinutes")
         feedPoller.start(intervalMinutes: intervalMinutes > 0 ? intervalMinutes : 15)
+
+        Task { @MainActor [weak self] in
+            guard let self else { return }
+            while true {
+                await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
+                    withObservationTracking {
+                        _ = self.badgeController.hasUnread
+                    } onChange: {
+                        continuation.resume()
+                    }
+                }
+                self.statusItem.button?.image = self.badgeController.statusImage
+            }
+        }
     }
 
     func applicationWillTerminate(_ notification: Notification) {
