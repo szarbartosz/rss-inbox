@@ -1,0 +1,43 @@
+name: RSSBox
+options:
+  bundleIdPrefix: com.rssbox
+  deploymentTarget:
+    macOS: "15.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.10"
+    MACOSX_DEPLOYMENT_TARGET: "15.0"
+
+targets:
+  RSSBox:
+    type: application
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: RSSBox
+    resources:
+      - path: RSSBox/Resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.rssbox.RSSBox
+        INFOPLIST_FILE: RSSBox/Info.plist
+        CODE_SIGN_ENTITLEMENTS: RSSBox/RSSBox.entitlements
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGNING_REQUIRED: NO
+    preBuildScripts: []
+
+  RSSBoxTests:
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: "15.0"
+    sources:
+      - path: RSSBoxTests
+    dependencies:
+      - target: RSSBox
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.rssbox.RSSBoxTests
