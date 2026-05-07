@@ -3,8 +3,8 @@ import SwiftData
 
 @Model
 final class Feed {
-    var id: UUID
-    var url: String
+    @Attribute(.unique) var id: UUID
+    @Attribute(.unique) var url: String
     var title: String
     var faviconData: Data?
     var lastFetched: Date?
