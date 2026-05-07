@@ -23,6 +23,7 @@
 		B675E27C0C3B70494839764C /* RSSBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83F91F875EFE92840B31A8 /* RSSBoxApp.swift */; };
 		B7FE21B500846D4EC172C6B4 /* ReaderWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421566575A9967F2A0549E1 /* ReaderWindowController.swift */; };
 		C7B4F08C7EA674A1977767DB /* BadgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897B52E7A65D13B9C9AA944 /* BadgeController.swift */; };
+		C84F49C1347F1A22EB5BAEA8 /* FeedPollerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738D4C1873257E42A6E7D04 /* FeedPollerIntegrationTests.swift */; };
 		DE78FE7AD58E793F1FB72DBF /* sample.opml in Resources */ = {isa = PBXBuildFile; fileRef = DE03EB25E802E4F8B1317960 /* sample.opml */; };
 		E170EFB0A5B02E250A74AA0D /* invalid.opml in Resources */ = {isa = PBXBuildFile; fileRef = C7701F021F0BB20A8DCDD951 /* invalid.opml */; };
 		EA5F3A5ABE28C2AC681063F5 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF4221A83D8EBAB417E2C35 /* Article.swift */; };
@@ -66,6 +67,7 @@
 		CAC4B6CCCFFE0F0B86054743 /* malformed.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = malformed.xml; sourceTree = "<group>"; };
 		DE03EB25E802E4F8B1317960 /* sample.opml */ = {isa = PBXFileReference; path = sample.opml; sourceTree = "<group>"; };
 		E3CF6B757DF74A6A9DC12435 /* rss2-no-guid.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "rss2-no-guid.xml"; sourceTree = "<group>"; };
+		E738D4C1873257E42A6E7D04 /* FeedPollerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPollerIntegrationTests.swift; sourceTree = "<group>"; };
 		F526A143A687A71FC114ABD5 /* rss2.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = rss2.xml; sourceTree = "<group>"; };
 		FC83F91F875EFE92840B31A8 /* RSSBoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSBoxApp.swift; sourceTree = "<group>"; };
 		FF889E01F8FE01CF56644146 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				B7327968CA6F66881246F87A /* BadgeControllerTests.swift */,
 				C22989DCBB680C3574988F71 /* FeedParserTests.swift */,
+				E738D4C1873257E42A6E7D04 /* FeedPollerIntegrationTests.swift */,
 				68786C3D7512A3E6F59440F2 /* ModelTests.swift */,
 				5EDF1D7A8556CC5BCCFAFFA4 /* OPMLParserTests.swift */,
 				3011B6E820B38532F4D572BE /* Fixtures */,
@@ -281,6 +284,7 @@
 			files = (
 				B0499F51C361BEB65F882FFD /* BadgeControllerTests.swift in Sources */,
 				FA02B12CD7E89C1E92E63BC5 /* FeedParserTests.swift in Sources */,
+				C84F49C1347F1A22EB5BAEA8 /* FeedPollerIntegrationTests.swift in Sources */,
 				38D06A7FE81552DF3B8A1917 /* ModelTests.swift in Sources */,
 				3D2D788FF5D3DE64D8B814FA /* OPMLParserTests.swift in Sources */,
 			);
@@ -302,6 +306,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -458,6 +463,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
