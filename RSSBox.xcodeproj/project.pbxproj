@@ -11,6 +11,7 @@
 		2CB367EE1DFBBA60465CFBD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402B30CD06D6321702CEBB36 /* AppDelegate.swift */; };
 		38D06A7FE81552DF3B8A1917 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68786C3D7512A3E6F59440F2 /* ModelTests.swift */; };
 		3D2D788FF5D3DE64D8B814FA /* OPMLParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDF1D7A8556CC5BCCFAFFA4 /* OPMLParserTests.swift */; };
+		5154BAA50EB244CBE1FF7118 /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA3385F6CD6D8E016601AD7 /* ArticleRowView.swift */; };
 		5337C1B4BBFF63B508D73E18 /* rss2.xml in Resources */ = {isa = PBXBuildFile; fileRef = F526A143A687A71FC114ABD5 /* rss2.xml */; };
 		564B3746EA6D85F5160973E4 /* FeedPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BBCD6510D5FB8FE2C968A8 /* FeedPoller.swift */; };
 		73713B9248179AAD452BBE0D /* atom.xml in Resources */ = {isa = PBXBuildFile; fileRef = B92B18A57345DBE2CC3230C8 /* atom.xml */; };
@@ -54,6 +55,7 @@
 		64A80F1CB69DC234E475DCA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		68786C3D7512A3E6F59440F2 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		7637A75722C845DE12BD2E90 /* OPMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPMLParser.swift; sourceTree = "<group>"; };
+		7DA3385F6CD6D8E016601AD7 /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
 		A421566575A9967F2A0549E1 /* ReaderWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderWindowController.swift; sourceTree = "<group>"; };
 		B7327968CA6F66881246F87A /* BadgeControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeControllerTests.swift; sourceTree = "<group>"; };
 		B92B18A57345DBE2CC3230C8 /* atom.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = atom.xml; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		F54F8649FD92A9E272EA24B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7DA3385F6CD6D8E016601AD7 /* ArticleRowView.swift */,
 				28B44FA3DE2034A467031588 /* PopoverView.swift */,
 				0785BC20B38302FB9C567F6A /* PreferencesView.swift */,
 				A421566575A9967F2A0549E1 /* ReaderWindowController.swift */,
@@ -259,6 +262,7 @@
 			files = (
 				2CB367EE1DFBBA60465CFBD2 /* AppDelegate.swift in Sources */,
 				EA5F3A5ABE28C2AC681063F5 /* Article.swift in Sources */,
+				5154BAA50EB244CBE1FF7118 /* ArticleRowView.swift in Sources */,
 				C7B4F08C7EA674A1977767DB /* BadgeController.swift in Sources */,
 				9181C3F580AC95B95CB59B3F /* Feed.swift in Sources */,
 				078E47630BD5835A80100927 /* FeedParser.swift in Sources */,
