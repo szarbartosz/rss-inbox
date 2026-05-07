@@ -1,16 +1,16 @@
 import AppKit
 import SwiftData
-import Observation
 
 @Observable
 final class BadgeController {
     var hasUnread: Bool = false
 
+    @MainActor
     private static func emojiImage(_ emoji: String) -> NSImage {
-        let size = NSSize(width: 22, height: 22)
+        let size = NSSize(width: 18, height: 18)
         let image = NSImage(size: size, flipped: false) { rect in
             let attrs: [NSAttributedString.Key: Any] = [
-                .font: NSFont.systemFont(ofSize: 16)
+                .font: NSFont.systemFont(ofSize: 14)
             ]
             let str = NSAttributedString(string: emoji, attributes: attrs)
             let strSize = str.size()
@@ -23,14 +23,14 @@ final class BadgeController {
         return image
     }
 
-    static let emptyMailbox = emojiImage("📪")
-    static let fullMailbox  = emojiImage("📫")
+    @MainActor private static let emptyMailbox = emojiImage("📪")
+    @MainActor private static let fullMailbox  = emojiImage("📫")
 
-    var statusImage: NSImage {
+    @MainActor var statusImage: NSImage {
         hasUnread ? BadgeController.fullMailbox : BadgeController.emptyMailbox
     }
 
-    func update(context: ModelContext) throws {
+    @MainActor func update(context: ModelContext) throws {
         let descriptor = FetchDescriptor<Article>(
             predicate: #Predicate { !$0.isRead }
         )

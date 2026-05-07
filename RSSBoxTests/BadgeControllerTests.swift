@@ -4,6 +4,7 @@ import AppKit
 @testable import RSSBox
 
 @Suite("BadgeController")
+@MainActor
 struct BadgeControllerTests {
     private func makeContainer() throws -> ModelContainer {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
