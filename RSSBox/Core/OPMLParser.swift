@@ -9,7 +9,7 @@ enum OPMLParserError: Error {
     case invalidXML
 }
 
-final class OPMLParser {
+struct OPMLParser {
     func parse(data: Data) throws -> [OPMLFeed] {
         let delegate = OPMLParserDelegate()
         let parser = XMLParser(data: data)
@@ -23,7 +23,7 @@ final class OPMLParser {
         return delegate.feeds
     }
 
-    func generate(feeds: [Feed]) -> Data {
+    func generate(feeds: [OPMLFeed]) -> Data {
         var xml = """
         <?xml version="1.0" encoding="UTF-8"?>
         <opml version="2.0">

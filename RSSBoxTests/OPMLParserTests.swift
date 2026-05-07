@@ -1,15 +1,15 @@
 import Testing
 import Foundation
-import SwiftData
 @testable import RSSBox
 
 private func fixture(_ name: String) -> Data {
     let bundle = Bundle(for: OPMLParserTestsHelper.self)
-    if let url = bundle.url(forResource: name, withExtension: nil, subdirectory: "Fixtures") {
-        return try! Data(contentsOf: url)
+    guard let url = bundle.url(forResource: name, withExtension: nil, subdirectory: "Fixtures")
+                   ?? bundle.url(forResource: name, withExtension: nil),
+          let data = try? Data(contentsOf: url) else {
+        fatalError("Missing test fixture: \(name) — check it is listed in Copy Bundle Resources")
     }
-    let url = bundle.url(forResource: name, withExtension: nil)!
-    return try! Data(contentsOf: url)
+    return data
 }
 
 private final class OPMLParserTestsHelper {}
@@ -42,16 +42,15 @@ struct OPMLParserTests {
     }
 
     @Test func generatesValidOPML() throws {
-        let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try ModelContainer(for: Feed.self, Article.self, configurations: config)
-        let context = ModelContext(container)
-        let feed1 = Feed(url: "https://example.com/rss", title: "Example")
-        let feed2 = Feed(url: "https://other.com/feed", title: "Other")
-        context.insert(feed1)
-        context.insert(feed2)
-        let data = OPMLParser().generate(feeds: [feed1, feed2])
+        let feeds = [
+            OPMLFeed(title: "Example", url: "https://example.com/rss"),
+            OPMLFeed(title: "Other", url: "https://other.com/feed"),
+        ]
+        let data = OPMLParser().generate(feeds: feeds)
         let reparsed = try OPMLParser().parse(data: data)
         #expect(reparsed.count == 2)
         #expect(reparsed[0].url == "https://example.com/rss")
+        #expect(reparsed[0].title == "Example")
+        #expect(reparsed[1].url == "https://other.com/feed")
     }
 }
