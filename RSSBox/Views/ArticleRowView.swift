@@ -43,6 +43,5 @@ struct ArticleRowView: View {
         .padding(.vertical, 8)
         .padding(.horizontal, 16)
         .opacity(article.isRead ? 0.6 : 1.0)
-        .background(Color.clear)
     }
 }

@@ -1,5 +1,8 @@
 import SwiftUI
 import SwiftData
+import OSLog
+
+private let logger = Logger(subsystem: "com.rssbox.RSSBox", category: "PopoverView")
 
 struct PopoverView: View {
     @Environment(\.modelContext) private var modelContext
@@ -127,12 +130,20 @@ struct PopoverView: View {
     private func markRead(_ article: Article) {
         article.isRead = true
         try? modelContext.save()
-        try? badgeController.update(context: modelContext)
+        do {
+            try badgeController.update(context: modelContext)
+        } catch {
+            logger.error("Badge update failed: \(error)")
+        }
     }
 
     private func markAllRead() {
         filteredArticles.forEach { $0.isRead = true }
         try? modelContext.save()
-        try? badgeController.update(context: modelContext)
+        do {
+            try badgeController.update(context: modelContext)
+        } catch {
+            logger.error("Badge update failed: \(error)")
+        }
     }
 }
