@@ -19,11 +19,13 @@
 		825A1500F3DC41DE45007DA6 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785BC20B38302FB9C567F6A /* PreferencesView.swift */; };
 		913F8A1CC0AE6C0448E34B99 /* malformed.xml in Resources */ = {isa = PBXBuildFile; fileRef = CAC4B6CCCFFE0F0B86054743 /* malformed.xml */; };
 		9181C3F580AC95B95CB59B3F /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF889E01F8FE01CF56644146 /* Feed.swift */; };
+		A921BBCF494B8D132CB8D9F3 /* article-template.html in Resources */ = {isa = PBXBuildFile; fileRef = CB8A4ABA7D73B7AC0E77B4C6 /* article-template.html */; };
 		B0499F51C361BEB65F882FFD /* BadgeControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7327968CA6F66881246F87A /* BadgeControllerTests.swift */; };
 		B675E27C0C3B70494839764C /* RSSBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83F91F875EFE92840B31A8 /* RSSBoxApp.swift */; };
 		B7FE21B500846D4EC172C6B4 /* ReaderWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421566575A9967F2A0549E1 /* ReaderWindowController.swift */; };
 		C7B4F08C7EA674A1977767DB /* BadgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897B52E7A65D13B9C9AA944 /* BadgeController.swift */; };
 		C84F49C1347F1A22EB5BAEA8 /* FeedPollerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738D4C1873257E42A6E7D04 /* FeedPollerIntegrationTests.swift */; };
+		D19F962194200CF4F00E5E72 /* ArticleContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82998AE37984DB27D49A6C41 /* ArticleContentView.swift */; };
 		DE78FE7AD58E793F1FB72DBF /* sample.opml in Resources */ = {isa = PBXBuildFile; fileRef = DE03EB25E802E4F8B1317960 /* sample.opml */; };
 		E170EFB0A5B02E250A74AA0D /* invalid.opml in Resources */ = {isa = PBXBuildFile; fileRef = C7701F021F0BB20A8DCDD951 /* invalid.opml */; };
 		EA5F3A5ABE28C2AC681063F5 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF4221A83D8EBAB417E2C35 /* Article.swift */; };
@@ -57,6 +59,7 @@
 		68786C3D7512A3E6F59440F2 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		7637A75722C845DE12BD2E90 /* OPMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPMLParser.swift; sourceTree = "<group>"; };
 		7DA3385F6CD6D8E016601AD7 /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
+		82998AE37984DB27D49A6C41 /* ArticleContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleContentView.swift; sourceTree = "<group>"; };
 		A421566575A9967F2A0549E1 /* ReaderWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderWindowController.swift; sourceTree = "<group>"; };
 		B7327968CA6F66881246F87A /* BadgeControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeControllerTests.swift; sourceTree = "<group>"; };
 		B92B18A57345DBE2CC3230C8 /* atom.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = atom.xml; sourceTree = "<group>"; };
@@ -65,6 +68,7 @@
 		C22989DCBB680C3574988F71 /* FeedParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedParserTests.swift; sourceTree = "<group>"; };
 		C7701F021F0BB20A8DCDD951 /* invalid.opml */ = {isa = PBXFileReference; path = invalid.opml; sourceTree = "<group>"; };
 		CAC4B6CCCFFE0F0B86054743 /* malformed.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = malformed.xml; sourceTree = "<group>"; };
+		CB8A4ABA7D73B7AC0E77B4C6 /* article-template.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "article-template.html"; sourceTree = "<group>"; };
 		DE03EB25E802E4F8B1317960 /* sample.opml */ = {isa = PBXFileReference; path = sample.opml; sourceTree = "<group>"; };
 		E3CF6B757DF74A6A9DC12435 /* rss2-no-guid.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "rss2-no-guid.xml"; sourceTree = "<group>"; };
 		E738D4C1873257E42A6E7D04 /* FeedPollerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPollerIntegrationTests.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				37F37F10FD43B58773A09466 /* .gitkeep */,
+				CB8A4ABA7D73B7AC0E77B4C6 /* article-template.html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 		F54F8649FD92A9E272EA24B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				82998AE37984DB27D49A6C41 /* ArticleContentView.swift */,
 				7DA3385F6CD6D8E016601AD7 /* ArticleRowView.swift */,
 				28B44FA3DE2034A467031588 /* PopoverView.swift */,
 				0785BC20B38302FB9C567F6A /* PreferencesView.swift */,
@@ -199,6 +205,7 @@
 			buildConfigurationList = 0CD530458B135B987AEF52C2 /* Build configuration list for PBXNativeTarget "RSSBox" */;
 			buildPhases = (
 				1395EE74CEF4ED5A2F1F4B4C /* Sources */,
+				B2430E7BF3A0C41DA747B66D /* Resources */,
 			);
 			buildRules = (
 			);
@@ -243,6 +250,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B2430E7BF3A0C41DA747B66D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A921BBCF494B8D132CB8D9F3 /* article-template.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BC72F642D39248A8F76295E7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -265,6 +280,7 @@
 			files = (
 				2CB367EE1DFBBA60465CFBD2 /* AppDelegate.swift in Sources */,
 				EA5F3A5ABE28C2AC681063F5 /* Article.swift in Sources */,
+				D19F962194200CF4F00E5E72 /* ArticleContentView.swift in Sources */,
 				5154BAA50EB244CBE1FF7118 /* ArticleRowView.swift in Sources */,
 				C7B4F08C7EA674A1977767DB /* BadgeController.swift in Sources */,
 				9181C3F580AC95B95CB59B3F /* Feed.swift in Sources */,
