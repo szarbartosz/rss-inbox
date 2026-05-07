@@ -1,24 +1,23 @@
 import Foundation
 
 struct ParsedItem {
-    var guid: String
-    var title: String
-    var summary: String
-    var link: String
-    var pubDate: Date
+    let guid: String
+    let title: String
+    let summary: String
+    let link: String
+    let pubDate: Date
 }
 
 struct ParsedFeed {
-    var title: String
-    var items: [ParsedItem]
+    let title: String
+    let items: [ParsedItem]
 }
 
 enum FeedParserError: Error {
     case invalidXML
-    case unsupportedFormat
 }
 
-final class FeedParser: NSObject {
+final class FeedParser {
     func parse(data: Data) throws -> ParsedFeed {
         let delegate = ParserDelegate()
         let parser = XMLParser(data: data)
@@ -53,9 +52,11 @@ private final class ParserDelegate: NSObject, XMLParserDelegate {
         return f
     }()
 
+    private static let iso8601: ISO8601DateFormatter = ISO8601DateFormatter()
+
     private func parseDate(_ s: String) -> Date? {
         ParserDelegate.rfc2822.date(from: s.trimmingCharacters(in: .whitespaces))
-            ?? ISO8601DateFormatter().date(from: s.trimmingCharacters(in: .whitespaces))
+            ?? ParserDelegate.iso8601.date(from: s.trimmingCharacters(in: .whitespaces))
     }
 
     func parser(_ parser: XMLParser, didStartElement elementName: String,
@@ -97,7 +98,7 @@ private final class ParserDelegate: NSObject, XMLParserDelegate {
                     title: currentTitle,
                     summary: summary,
                     link: currentLink,
-                    pubDate: currentPubDate ?? Date()
+                    pubDate: currentPubDate ?? Date.distantPast
                 ))
                 inEntry = false; inItem = false
             default: break
