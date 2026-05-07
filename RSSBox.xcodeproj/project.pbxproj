@@ -15,7 +15,9 @@
 		81B1485500F66EAF8F308452 /* OPMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7637A75722C845DE12BD2E90 /* OPMLParser.swift */; };
 		913F8A1CC0AE6C0448E34B99 /* malformed.xml in Resources */ = {isa = PBXBuildFile; fileRef = CAC4B6CCCFFE0F0B86054743 /* malformed.xml */; };
 		9181C3F580AC95B95CB59B3F /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF889E01F8FE01CF56644146 /* Feed.swift */; };
+		B0499F51C361BEB65F882FFD /* BadgeControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7327968CA6F66881246F87A /* BadgeControllerTests.swift */; };
 		B675E27C0C3B70494839764C /* RSSBoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC83F91F875EFE92840B31A8 /* RSSBoxApp.swift */; };
+		C7B4F08C7EA674A1977767DB /* BadgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897B52E7A65D13B9C9AA944 /* BadgeController.swift */; };
 		DE78FE7AD58E793F1FB72DBF /* sample.opml in Resources */ = {isa = PBXBuildFile; fileRef = DE03EB25E802E4F8B1317960 /* sample.opml */; };
 		E170EFB0A5B02E250A74AA0D /* invalid.opml in Resources */ = {isa = PBXBuildFile; fileRef = C7701F021F0BB20A8DCDD951 /* invalid.opml */; };
 		EA5F3A5ABE28C2AC681063F5 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF4221A83D8EBAB417E2C35 /* Article.swift */; };
@@ -35,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		16A596132AD56AC86DEB131A /* FeedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedParser.swift; sourceTree = "<group>"; };
+		2897B52E7A65D13B9C9AA944 /* BadgeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeController.swift; sourceTree = "<group>"; };
 		2AF4221A83D8EBAB417E2C35 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		37F37F10FD43B58773A09466 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		5951B8D6E260FE22A0D66CAF /* RSSBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RSSBox.entitlements; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 		64A80F1CB69DC234E475DCA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		68786C3D7512A3E6F59440F2 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		7637A75722C845DE12BD2E90 /* OPMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPMLParser.swift; sourceTree = "<group>"; };
+		B7327968CA6F66881246F87A /* BadgeControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeControllerTests.swift; sourceTree = "<group>"; };
 		B92B18A57345DBE2CC3230C8 /* atom.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = atom.xml; sourceTree = "<group>"; };
 		BB3FEBF3823D8CC781F57428 /* RSSBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA657817E912D44085F1805 /* RSSBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSSBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +63,7 @@
 		18393547412A9190EE093C67 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2897B52E7A65D13B9C9AA944 /* BadgeController.swift */,
 				16A596132AD56AC86DEB131A /* FeedParser.swift */,
 				7637A75722C845DE12BD2E90 /* OPMLParser.swift */,
 			);
@@ -130,6 +135,7 @@
 		A0E6A0808AC9C6EDE6D11AFA /* RSSBoxTests */ = {
 			isa = PBXGroup;
 			children = (
+				B7327968CA6F66881246F87A /* BadgeControllerTests.swift */,
 				C22989DCBB680C3574988F71 /* FeedParserTests.swift */,
 				68786C3D7512A3E6F59440F2 /* ModelTests.swift */,
 				5EDF1D7A8556CC5BCCFAFFA4 /* OPMLParserTests.swift */,
@@ -237,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA5F3A5ABE28C2AC681063F5 /* Article.swift in Sources */,
+				C7B4F08C7EA674A1977767DB /* BadgeController.swift in Sources */,
 				9181C3F580AC95B95CB59B3F /* Feed.swift in Sources */,
 				078E47630BD5835A80100927 /* FeedParser.swift in Sources */,
 				81B1485500F66EAF8F308452 /* OPMLParser.swift in Sources */,
@@ -248,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0499F51C361BEB65F882FFD /* BadgeControllerTests.swift in Sources */,
 				FA02B12CD7E89C1E92E63BC5 /* FeedParserTests.swift in Sources */,
 				38D06A7FE81552DF3B8A1917 /* ModelTests.swift in Sources */,
 				3D2D788FF5D3DE64D8B814FA /* OPMLParserTests.swift in Sources */,
