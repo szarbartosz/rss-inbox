@@ -21,6 +21,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37F37F10FD43B58773A09466 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
 		5951B8D6E260FE22A0D66CAF /* RSSBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RSSBox.entitlements; sourceTree = "<group>"; };
 		64A80F1CB69DC234E475DCA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BB3FEBF3823D8CC781F57428 /* RSSBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +86,7 @@
 		8AC77125401756ED1FCF2903 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				37F37F10FD43B58773A09466 /* .gitkeep */,
 			);
 			path = Resources;
 			sourceTree = "<group>";

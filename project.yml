@@ -28,7 +28,6 @@ targets:
         ENABLE_HARDENED_RUNTIME: YES
         CODE_SIGN_IDENTITY: "-"
         CODE_SIGNING_REQUIRED: NO
-    preBuildScripts: []
 
   RSSBoxTests:
     type: bundle.unit-test
