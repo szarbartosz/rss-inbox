@@ -6,6 +6,7 @@ private let logger = Logger(subsystem: "com.rssbox.RSSBox", category: "PopoverVi
 
 struct PopoverView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.openSettings) private var openSettings
     @Environment(BadgeController.self) private var badgeController
     @Environment(FeedPoller.self) private var feedPoller
     @Query(sort: \Feed.title) private var feeds: [Feed]
@@ -33,11 +34,16 @@ struct PopoverView: View {
                     .font(.caption)
                     .fontWeight(.semibold)
                 Spacer()
-                Button("↻") { feedPoller.pollNow() }
-                    .buttonStyle(.borderless)
-                    .font(.caption)
-                Button("⚙") {
-                    NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+                Button { feedPoller.pollNow() } label: {
+                    Image(systemName: "arrow.clockwise")
+                }
+                .buttonStyle(.borderless)
+                .font(.caption)
+                Button {
+                    openSettings()
+                    NSApp.activate(ignoringOtherApps: true)
+                } label: {
+                    Image(systemName: "gear")
                 }
                 .buttonStyle(.borderless)
                 .font(.caption)
@@ -96,7 +102,7 @@ struct PopoverView: View {
                     .foregroundStyle(.tertiary)
                 Spacer()
                 Button("Mark all read") { markAllRead() }
-                    .buttonStyle(.borderless)
+                    .buttonStyle(DimOnPressButtonStyle())
                     .font(.caption2)
                     .foregroundStyle(Color.accentColor)
             }
@@ -145,5 +151,13 @@ struct PopoverView: View {
         } catch {
             logger.error("Badge update failed: \(error)")
         }
+    }
+}
+
+private struct DimOnPressButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .opacity(configuration.isPressed ? 0.4 : 1.0)
+            .animation(.easeOut(duration: 0.1), value: configuration.isPressed)
     }
 }

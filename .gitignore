@@ -5,3 +5,5 @@ DerivedData/
 *.xcuserdatad
 *.xcodeproj/xcuserdata/
 xcuserdata/
+plans/
+specs/

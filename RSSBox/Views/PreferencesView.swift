@@ -63,8 +63,8 @@ struct FeedsPreferencesView: View {
 
                 Spacer()
 
-                Button("Import OPML…") { showImportPanel = true }
-                Button("Export OPML…") { exportOPML() }
+                Button("Import OPML") { showImportPanel = true }
+                Button("Export OPML") { exportOPML() }
             }
 
             Divider()
