@@ -7,3 +7,7 @@ DerivedData/
 xcuserdata/
 plans/
 specs/
+*.dmg
+*.app/
+build/
+*.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
