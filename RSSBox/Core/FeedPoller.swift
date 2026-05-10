@@ -97,10 +97,13 @@ final class FeedPoller {
                 }
             }
 
+            let currentGuids = Set(parsed.items.map(\.guid))
             let allSorted = feed.articles.sorted { $0.pubDate > $1.pubDate }
             if allSorted.count > retentionLimit {
                 let excess = allSorted.count - retentionLimit
-                allSorted.suffix(excess).filter(\.isRead).forEach { context.delete($0) }
+                allSorted.suffix(excess)
+                    .filter { $0.isRead && !currentGuids.contains($0.guid) }
+                    .forEach { context.delete($0) }
             }
 
             feed.lastFetched = Date()
