@@ -32,15 +32,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             .modelContainer(modelContainer)
             .environment(badgeController)
             .environment(feedPoller)
+        let cornerRadius: CGFloat = 10
         let hostingView = NSHostingView(rootView: content)
         hostingView.frame = NSRect(x: 0, y: 0, width: 320, height: 480)
+        hostingView.wantsLayer = true
+        hostingView.layer?.cornerRadius = cornerRadius
+        hostingView.layer?.masksToBounds = true
 
         let effectView = NSVisualEffectView(frame: NSRect(x: 0, y: 0, width: 320, height: 480))
         effectView.material = .popover
         effectView.state = .active
+        effectView.blendingMode = .behindWindow
         effectView.wantsLayer = true
-        effectView.layer?.cornerRadius = 10
-        effectView.layer?.masksToBounds = true
+        effectView.maskImage = Self.roundedCornerMask(radius: cornerRadius)
         effectView.addSubview(hostingView)
         hostingView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -110,6 +114,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         panel.setFrame(NSRect(x: x, y: y, width: panelWidth, height: panelHeight), display: true)
         panel.makeKeyAndOrderFront(nil)
+        panel.invalidateShadow()
 
         let context = ModelContext(modelContainer)
         try? badgeController.update(context: context)
@@ -126,5 +131,17 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             NSEvent.removeMonitor(monitor)
             eventMonitor = nil
         }
+    }
+
+    private static func roundedCornerMask(radius: CGFloat) -> NSImage {
+        let edge = radius * 2 + 1
+        let image = NSImage(size: NSSize(width: edge, height: edge), flipped: false) { rect in
+            NSColor.black.setFill()
+            NSBezierPath(roundedRect: rect, xRadius: radius, yRadius: radius).fill()
+            return true
+        }
+        image.capInsets = NSEdgeInsets(top: radius, left: radius, bottom: radius, right: radius)
+        image.resizingMode = .stretch
+        return image
     }
 }
