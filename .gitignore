@@ -10,4 +10,5 @@ specs/
 *.dmg
 *.app/
 build/
-*.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+**/xcshareddata/WorkspaceSettings.xcsettings
+**/xcshareddata/swiftpm/
