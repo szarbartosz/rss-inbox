@@ -27,7 +27,7 @@ struct OPMLParser {
         var xml = """
         <?xml version="1.0" encoding="UTF-8"?>
         <opml version="2.0">
-          <head><title>RSS Box Feeds</title></head>
+          <head><title>RSS Inbox Feeds</title></head>
           <body>
         """
         for feed in feeds {

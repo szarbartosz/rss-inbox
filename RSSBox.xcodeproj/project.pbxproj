@@ -25,6 +25,7 @@
 		B7FE21B500846D4EC172C6B4 /* ReaderWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A421566575A9967F2A0549E1 /* ReaderWindowController.swift */; };
 		C7B4F08C7EA674A1977767DB /* BadgeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897B52E7A65D13B9C9AA944 /* BadgeController.swift */; };
 		C84F49C1347F1A22EB5BAEA8 /* FeedPollerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E738D4C1873257E42A6E7D04 /* FeedPollerIntegrationTests.swift */; };
+		CC11263FBA6225B1FB6AC801 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79A92FF1C60DFD2CC8210218 /* Assets.xcassets */; };
 		D19F962194200CF4F00E5E72 /* ArticleContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82998AE37984DB27D49A6C41 /* ArticleContentView.swift */; };
 		D7D2CC8ADA2F2B18EADE2742 /* ReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD1EEA33E8B1FAC76AF90A6 /* ReaderView.swift */; };
 		DE78FE7AD58E793F1FB72DBF /* sample.opml in Resources */ = {isa = PBXBuildFile; fileRef = DE03EB25E802E4F8B1317960 /* sample.opml */; };
@@ -51,7 +52,7 @@
 		2897B52E7A65D13B9C9AA944 /* BadgeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeController.swift; sourceTree = "<group>"; };
 		28B44FA3DE2034A467031588 /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
 		2AF4221A83D8EBAB417E2C35 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
-		37F37F10FD43B58773A09466 /* .gitkeep */ = {isa = PBXFileReference; path = .gitkeep; sourceTree = "<group>"; };
+		37F37F10FD43B58773A09466 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		402B30CD06D6321702CEBB36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AD1EEA33E8B1FAC76AF90A6 /* ReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderView.swift; sourceTree = "<group>"; };
 		5951B8D6E260FE22A0D66CAF /* RSSBox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RSSBox.entitlements; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		64A80F1CB69DC234E475DCA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		68786C3D7512A3E6F59440F2 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
 		7637A75722C845DE12BD2E90 /* OPMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPMLParser.swift; sourceTree = "<group>"; };
+		79A92FF1C60DFD2CC8210218 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DA3385F6CD6D8E016601AD7 /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
 		82998AE37984DB27D49A6C41 /* ArticleContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleContentView.swift; sourceTree = "<group>"; };
 		A421566575A9967F2A0549E1 /* ReaderWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderWindowController.swift; sourceTree = "<group>"; };
@@ -68,10 +70,10 @@
 		BB3FEBF3823D8CC781F57428 /* RSSBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA657817E912D44085F1805 /* RSSBoxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSSBoxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22989DCBB680C3574988F71 /* FeedParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedParserTests.swift; sourceTree = "<group>"; };
-		C7701F021F0BB20A8DCDD951 /* invalid.opml */ = {isa = PBXFileReference; path = invalid.opml; sourceTree = "<group>"; };
+		C7701F021F0BB20A8DCDD951 /* invalid.opml */ = {isa = PBXFileReference; lastKnownFileType = text; path = invalid.opml; sourceTree = "<group>"; };
 		CAC4B6CCCFFE0F0B86054743 /* malformed.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = malformed.xml; sourceTree = "<group>"; };
 		CB8A4ABA7D73B7AC0E77B4C6 /* article-template.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "article-template.html"; sourceTree = "<group>"; };
-		DE03EB25E802E4F8B1317960 /* sample.opml */ = {isa = PBXFileReference; path = sample.opml; sourceTree = "<group>"; };
+		DE03EB25E802E4F8B1317960 /* sample.opml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = sample.opml; sourceTree = "<group>"; };
 		E3CF6B757DF74A6A9DC12435 /* rss2-no-guid.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "rss2-no-guid.xml"; sourceTree = "<group>"; };
 		E738D4C1873257E42A6E7D04 /* FeedPollerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPollerIntegrationTests.swift; sourceTree = "<group>"; };
 		F526A143A687A71FC114ABD5 /* rss2.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = rss2.xml; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				402B30CD06D6321702CEBB36 /* AppDelegate.swift */,
+				79A92FF1C60DFD2CC8210218 /* Assets.xcassets */,
 				64A80F1CB69DC234E475DCA7 /* Info.plist */,
 				5951B8D6E260FE22A0D66CAF /* RSSBox.entitlements */,
 				FC83F91F875EFE92840B31A8 /* RSSBoxApp.swift */,
@@ -228,9 +231,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1430;
-				TargetAttributes = {
-				};
+				LastUpgradeCheck = 2640;
 			};
 			buildConfigurationList = AA9C75F2517D7641526014BA /* Build configuration list for PBXProject "RSSBox" */;
 			developmentRegion = en;
@@ -257,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC11263FBA6225B1FB6AC801 /* Assets.xcassets in Resources */,
 				A921BBCF494B8D132CB8D9F3 /* article-template.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +328,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -333,7 +336,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rssbox.RSSBoxTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.szarbartosz.rss-inbox.tests";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RSSBox.app/Contents/MacOS/RSSBox";
 			};
@@ -373,9 +376,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -396,6 +401,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.10;
@@ -436,9 +442,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -452,6 +460,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.10;
@@ -464,16 +473,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGNING_REQUIRED = NO;
 				CODE_SIGN_ENTITLEMENTS = RSSBox/RSSBox.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = RSSBox/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rssbox.RSSBox;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.szarbartosz.rss-inbox";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -483,6 +500,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -490,7 +508,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rssbox.RSSBoxTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.szarbartosz.rss-inbox.tests";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RSSBox.app/Contents/MacOS/RSSBox";
 			};
@@ -502,16 +520,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGNING_REQUIRED = NO;
 				CODE_SIGN_ENTITLEMENTS = RSSBox/RSSBox.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = RSSBox/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rssbox.RSSBox;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.szarbartosz.rss-inbox";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SDKROOT = macosx;
 			};
 			name = Release;

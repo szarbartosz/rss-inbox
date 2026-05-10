@@ -1,6 +1,6 @@
 name: RSSBox
 options:
-  bundleIdPrefix: com.rssbox
+  bundleIdPrefix: com.szarbartosz
   deploymentTarget:
     macOS: "15.0"
   createIntermediateGroups: true
@@ -22,12 +22,13 @@ targets:
       - path: RSSBox/Resources
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.rssbox.RSSBox
+        PRODUCT_BUNDLE_IDENTIFIER: com.szarbartosz.rss-inbox
         INFOPLIST_FILE: RSSBox/Info.plist
         CODE_SIGN_ENTITLEMENTS: RSSBox/RSSBox.entitlements
         ENABLE_HARDENED_RUNTIME: YES
         CODE_SIGN_IDENTITY: "-"
         CODE_SIGNING_REQUIRED: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
 
   RSSBoxTests:
     type: bundle.unit-test
@@ -39,5 +40,5 @@ targets:
       - target: RSSBox
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.rssbox.RSSBoxTests
+        PRODUCT_BUNDLE_IDENTIFIER: com.szarbartosz.rss-inbox.tests
         GENERATE_INFOPLIST_FILE: YES

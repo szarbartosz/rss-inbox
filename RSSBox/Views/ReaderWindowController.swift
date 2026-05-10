@@ -12,7 +12,7 @@ final class ReaderWindowController: NSWindowController {
             backing: .buffered,
             defer: false
         )
-        window.title = "RSS Box — Reader"
+        window.title = "RSS Inbox — Reader"
         window.setFrameAutosaveName("ReaderWindow")
         window.center()
         super.init(window: window)

@@ -30,7 +30,7 @@ struct PopoverView: View {
         VStack(spacing: 0) {
             // Header
             HStack {
-                Text("RSS Box")
+                Text("RSS Inbox")
                     .font(.caption)
                     .fontWeight(.semibold)
                 Spacer()
