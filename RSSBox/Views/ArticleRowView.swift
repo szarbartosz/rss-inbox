@@ -12,36 +12,36 @@ struct ArticleRowView: View {
     }
 
     var body: some View {
-        HStack(alignment: .top, spacing: 8) {
-            VStack(alignment: .leading, spacing: 3) {
-                HStack(spacing: 6) {
-                    Circle()
-                        .fill(article.isRead ? Color.clear : Color.accentColor)
-                        .overlay(Circle().stroke(article.isRead ? Color.secondary : Color.clear, lineWidth: 1))
-                        .frame(width: 6, height: 6)
-                        .padding(.top, 1)
-                    Text("\(article.feed?.title ?? "") · \(ageString)")
+        Button(action: onRead) {
+            HStack(alignment: .top, spacing: 8) {
+                VStack(alignment: .leading, spacing: 3) {
+                    HStack(spacing: 6) {
+                        Circle()
+                            .fill(article.isRead ? Color.clear : Color.accentColor)
+                            .overlay(Circle().stroke(article.isRead ? Color.secondary : Color.clear, lineWidth: 1))
+                            .frame(width: 6, height: 6)
+                            .padding(.top, 1)
+                        Text("\(article.feed?.title ?? "") · \(ageString)")
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                    }
+                    Text(article.title)
+                        .font(.caption)
+                        .fontWeight(article.isRead ? .regular : .medium)
+                        .foregroundStyle(article.isRead ? .secondary : .primary)
+                        .lineLimit(2)
+                    Text(article.summary)
                         .font(.caption2)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(.tertiary)
+                        .lineLimit(2)
                 }
-                Text(article.title)
-                    .font(.caption)
-                    .fontWeight(article.isRead ? .regular : .medium)
-                    .foregroundStyle(article.isRead ? .secondary : .primary)
-                    .lineLimit(2)
-                Text(article.summary)
-                    .font(.caption2)
-                    .foregroundStyle(.tertiary)
-                    .lineLimit(2)
+                Spacer()
             }
-            Spacer()
-            Button("Read") { onRead() }
-                .buttonStyle(.borderless)
-                .font(.caption2)
-                .foregroundStyle(Color.accentColor)
+            .padding(.vertical, 8)
+            .padding(.horizontal, 16)
+            .opacity(article.isRead ? 0.6 : 1.0)
+            .contentShape(Rectangle())
         }
-        .padding(.vertical, 8)
-        .padding(.horizontal, 16)
-        .opacity(article.isRead ? 0.6 : 1.0)
+        .buttonStyle(DimOnPressButtonStyle())
     }
 }

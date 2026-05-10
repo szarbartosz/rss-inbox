@@ -20,11 +20,14 @@ final class ReaderWindowController: NSWindowController {
 
     required init?(coder: NSCoder) { fatalError() }
 
+    var modelContainer: ModelContainer?
+    var badgeController: BadgeController?
+
     func show(article: Article) {
-        let delegate = NSApp.delegate as! AppDelegate
+        guard let modelContainer, let badgeController else { return }
         let view = ReaderView(selectedArticle: article)
-            .modelContainer(delegate.modelContainer)
-            .environment(delegate.badgeController)
+            .modelContainer(modelContainer)
+            .environment(badgeController)
         window?.contentView = NSHostingView(rootView: view)
         showWindow(nil)
         window?.orderFrontRegardless()

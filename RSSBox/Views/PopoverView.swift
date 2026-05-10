@@ -85,7 +85,9 @@ struct PopoverView: View {
                         ForEach(filteredArticles) { article in
                             ArticleRowView(article: article) {
                                 markRead(article)
-                                ReaderWindowController.shared.show(article: article)
+                                if let url = URL(string: article.link) {
+                                    NSWorkspace.shared.open(url)
+                                }
                             }
                             Divider().padding(.leading, 16)
                         }
@@ -97,11 +99,18 @@ struct PopoverView: View {
 
             // Footer
             HStack {
-                Text("Updated \(lastUpdated)")
+                Text("Updated: \(lastUpdated)")
                     .font(.caption2)
                     .foregroundStyle(.tertiary)
                 Spacer()
                 Button("Mark all read") { markAllRead() }
+                    .buttonStyle(DimOnPressButtonStyle())
+                    .font(.caption2)
+                    .foregroundStyle(Color.accentColor)
+                Text("·")
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
+                Button("Quit") { NSApp.terminate(nil) }
                     .buttonStyle(DimOnPressButtonStyle())
                     .font(.caption2)
                     .foregroundStyle(Color.accentColor)
@@ -154,7 +163,7 @@ struct PopoverView: View {
     }
 }
 
-private struct DimOnPressButtonStyle: ButtonStyle {
+struct DimOnPressButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .opacity(configuration.isPressed ? 0.4 : 1.0)
