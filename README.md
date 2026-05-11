@@ -102,3 +102,7 @@ User-facing settings live in `UserDefaults` and the Preferences window:
 | --------------------- | ---- | ------- | --------------------------- |
 | `pollIntervalMinutes` | Int  | `15`    | Background polling interval |
 | `retentionLimit`      | Int  | `100`   | Max articles kept per feed  |
+
+## License
+
+[MIT](LICENSE) © Bartosz Szar
