@@ -397,6 +397,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.szarbartosz.rss-inbox";
+				PRODUCT_NAME = "RSS Inbox";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -516,6 +517,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.szarbartosz.rss-inbox";
+				PRODUCT_NAME = "RSS Inbox";
 				SDKROOT = macosx;
 			};
 			name = Debug;

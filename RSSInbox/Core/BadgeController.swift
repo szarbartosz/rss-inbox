@@ -9,14 +9,19 @@ final class BadgeController {
     private static func emojiImage(_ emoji: String) -> NSImage {
         let size = NSSize(width: 18, height: 18)
         let image = NSImage(size: size, flipped: false) { rect in
-            let attrs: [NSAttributedString.Key: Any] = [
-                .font: NSFont.systemFont(ofSize: 14)
-            ]
+            guard let ctx = NSGraphicsContext.current?.cgContext else {
+                return false
+            }
+            let font = NSFont.systemFont(ofSize: 14)
+            let attrs: [NSAttributedString.Key: Any] = [.font: font]
             let str = NSAttributedString(string: emoji, attributes: attrs)
-            let strSize = str.size()
-            let origin = NSPoint(x: (rect.width - strSize.width) / 2,
-                                 y: (rect.height - strSize.height) / 2)
-            str.draw(at: origin)
+            let line = CTLineCreateWithAttributedString(str)
+            let ink = CTLineGetImageBounds(line, ctx)
+            ctx.textPosition = CGPoint(
+                x: (rect.width - ink.width) / 2 - ink.minX,
+                y: (rect.height - ink.height) / 2 - ink.minY
+            )
+            CTLineDraw(line, ctx)
             return true
         }
         image.isTemplate = false
