@@ -48,20 +48,20 @@ No accounts. No sync. No subscriptions. Just feeds.
 xcodegen generate
 
 # 2. Build & run from Xcode (⌘R)
-open RSSBox.xcodeproj
+open RSSInbox.xcodeproj
 ```
 
 Or build from the command line:
 
 ```bash
-xcodebuild -scheme RSSBox -destination 'platform=macOS' \
+xcodebuild -scheme RSSInbox -destination 'platform=macOS' \
   CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO build
 ```
 
 ## Test
 
 ```bash
-xcodebuild test -scheme RSSBox -destination 'platform=macOS' \
+xcodebuild test -scheme RSSInbox -destination 'platform=macOS' \
   CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
 ```
 
@@ -70,9 +70,9 @@ The test suite covers OPML parsing, feed parsing (RSS 2.0 + Atom), the badge con
 ## Architecture
 
 ```
-RSSBox/
+RSSInbox/
 ├── AppDelegate.swift          NSPanel-backed status bar UI
-├── RSSBoxApp.swift            SwiftUI App entry point
+├── RSSInboxApp.swift          SwiftUI App entry point
 ├── Core/
 │   ├── FeedParser.swift       RSS 2.0 + Atom → ParsedFeed
 │   ├── OPMLParser.swift       OPML import / export

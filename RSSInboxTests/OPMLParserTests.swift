@@ -1,6 +1,6 @@
 import Testing
 import Foundation
-@testable import RSSBox
+@testable import RSSInbox
 
 private func fixture(_ name: String) -> Data {
     let bundle = Bundle(for: OPMLParserTestsHelper.self)

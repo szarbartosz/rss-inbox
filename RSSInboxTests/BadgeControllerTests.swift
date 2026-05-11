@@ -1,7 +1,7 @@
 import Testing
 import SwiftData
 import AppKit
-@testable import RSSBox
+@testable import RSSInbox
 
 @Suite("BadgeController")
 @MainActor

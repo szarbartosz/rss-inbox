@@ -1,7 +1,7 @@
 import Testing
 import SwiftData
 import Foundation
-@testable import RSSBox
+@testable import RSSInbox
 
 // URLProtocol stub for intercepting network requests in tests
 final class MockURLProtocol: URLProtocol {

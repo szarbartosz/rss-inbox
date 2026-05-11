@@ -1,12 +1,12 @@
-# RSSBox — Project Context
+# RSSInbox — Project Context
 
 Native macOS 15 menu bar RSS reader built with SwiftUI + SwiftData.
 
 ## Task 8: FeedPoller — STATUS: IN PROGRESS (3 tests failing)
 
 ### What was done
-- Created `RSSBoxTests/FeedPollerIntegrationTests.swift` (integration tests with MockURLProtocol)
-- Replaced `RSSBox/Core/FeedPoller.swift` stub with full implementation
+- Created `RSSInboxTests/FeedPollerIntegrationTests.swift` (integration tests with MockURLProtocol)
+- Replaced `RSSInbox/Core/FeedPoller.swift` stub with full implementation
 - Ran `xcodegen generate` to sync project
 
 ### Current test results (22 total, 3 failing)
@@ -61,22 +61,22 @@ after save triggers the merge. SwiftData may need `autosaveEnabled = true` or
 a `NotificationCenter` listener for `NSPersistentStoreRemoteChange`.
 
 ### Files to look at
-- `/Users/szarbartosz/Developer/rss-box/RSSBox/Core/FeedPoller.swift` — current implementation
-- `/Users/szarbartosz/Developer/rss-box/RSSBoxTests/FeedPollerIntegrationTests.swift` — tests (DO NOT MODIFY)
-- `/Users/szarbartosz/Developer/rss-box/RSSBox/Models/Feed.swift` — Feed model
-- `/Users/szarbartosz/Developer/rss-box/RSSBox/Models/Article.swift` — Article model
+- `/Users/szarbartosz/Developer/rss-box/RSSInbox/Core/FeedPoller.swift` — current implementation
+- `/Users/szarbartosz/Developer/rss-box/RSSInboxTests/FeedPollerIntegrationTests.swift` — tests (DO NOT MODIFY)
+- `/Users/szarbartosz/Developer/rss-box/RSSInbox/Models/Feed.swift` — Feed model
+- `/Users/szarbartosz/Developer/rss-box/RSSInbox/Models/Article.swift` — Article model
 - `/Users/szarbartosz/Developer/rss-box/project.yml` — XcodeGen config
 
 ### Commands to run tests
 ```bash
 cd /Users/szarbartosz/Developer/rss-box
 xcodegen generate
-xcodebuild test -scheme RSSBox -destination 'platform=macOS' CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO 2>&1 | grep -E "(passed|failed|error:)"
+xcodebuild test -scheme RSSInbox -destination 'platform=macOS' CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO 2>&1 | grep -E "(passed|failed|error:)"
 ```
 
 ### Git commit (to do after all 22 pass)
 ```bash
-git add RSSBox/Core/FeedPoller.swift RSSBoxTests/FeedPollerIntegrationTests.swift RSSBox.xcodeproj/project.pbxproj
+git add RSSInbox/Core/FeedPoller.swift RSSInboxTests/FeedPollerIntegrationTests.swift RSSInbox.xcodeproj/project.pbxproj
 git commit -m "feat: implement FeedPoller with deduplication and retention pruning"
 ```
 

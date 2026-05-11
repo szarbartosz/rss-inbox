@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 import OSLog
 
-private let logger = Logger(subsystem: "com.rssbox.RSSBox", category: "PopoverView")
+private let logger = Logger(subsystem: "com.szarbartosz.rss-inbox", category: "PopoverView")
 
 struct PopoverView: View {
     @Environment(\.modelContext) private var modelContext

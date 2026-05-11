@@ -3,7 +3,7 @@ import SwiftData
 import Observation
 import OSLog
 
-private let logger = Logger(subsystem: "com.rssbox.RSSBox", category: "FeedPoller")
+private let logger = Logger(subsystem: "com.szarbartosz.rss-inbox", category: "FeedPoller")
 
 @Observable
 @MainActor

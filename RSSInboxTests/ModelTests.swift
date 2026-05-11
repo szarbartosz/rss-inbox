@@ -1,6 +1,6 @@
 import Testing
 import SwiftData
-@testable import RSSBox
+@testable import RSSInbox
 
 @Suite("Models")
 struct ModelTests {
