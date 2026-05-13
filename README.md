@@ -1,75 +1,55 @@
-<div align="center">
+<p align="center">
+  <img src="metadata/readme-banner.png" alt="RSS Inbox — a status-bar RSS reader for macOS" width="100%" />
+</p>
 
-# :mailbox_with_mail: RSS Inbox
+<p align="center">
+  <img alt="macOS" src="https://img.shields.io/badge/macOS-15%2B-1b1b1d?style=flat-square&logo=apple&logoColor=f2f2f5" />
+  <img alt="Swift" src="https://img.shields.io/badge/Swift-5.10-0a84ff?style=flat-square&logo=swift&logoColor=white" />
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/License-MIT-f2f2f5?style=flat-square" /></a>
+</p>
 
-**A tiny, native status-bar RSS reader for macOS.**
-
-Built with SwiftUI · SwiftData · macOS 15+
-
-</div>
-
-## Why
-
-Most RSS readers want to be a whole app. RSS Inbox just lives in your status bar - a quiet unread indicator, a popover for skimming, and the system browser for actually reading.
-
-No accounts. No sync. No subscriptions. Just feeds.
+<p align="center">
+  <b>A quiet RSS reader that lives in your menu bar.</b><br/>
+  No accounts. No sync. No subscriptions. Just feeds.
+</p>
 
 ## Features
 
-- 🗞️ **Status-bar native** — runs as `LSUIElement`, no Dock icon, no window clutter
-- 🔵 **Unread badge** — the status icon shows a dot when there's something new
-- 📥 **Frictionless popover** — `⌘`-friendly popover with feed tabs, per-feed unread counts, and a full-width clickable article row
-- 🔄 **Background polling** — every 5, 15, 30, or 60 minutes (your call)
-- 📂 **OPML import/export** — bring your feeds with you
-- 🗑️ **Retention pruning** — keep the last 100 / 250 / 500 articles per feed, automatically
-- 🚀 **Launch at login** — via `SMAppService`, the modern way
-- 💾 **SwiftData persistence** — local-first, no cloud, no telemetry
-- 🌗 **Vibrant blur** — `NSVisualEffectView` with proper rounded corners and a real drop shadow
+- 🗞️ **Menu bar resident** - no Dock icon, no windows in your way
+- 📬 **The mailbox tells you** - the menu bar emoji flips when there's something new to read
+- 📥 **Skim-friendly popover** - feed tabs, per-feed unread counts, full-row article links
+- 🔄 **Background polling** - every 5, 15, 30, or 60 minutes
+- 📂 **OPML in & out** - bring your feeds with you
+- 🚀 **Sensible defaults** - launch at login, retention pruning, local-first SwiftData persistence
 
 ## Screenshots
 
-<div align="center">
+<p align="center">
+  <img src="metadata/Screenshot%202026-05-11%20at%2010.31.06.png" width="380" alt="RSS Inbox popover — light mode" />
+  &nbsp;&nbsp;
+  <img src="metadata/Screenshot%202026-05-11%20at%2010.31.00.png" width="380" alt="RSS Inbox popover — dark mode" />
+</p>
 
-<img src="metadata/Screenshot%202026-05-11%20at%2010.31.06.png" width="360" alt="RSS Inbox popover — light mode" />
-&nbsp;&nbsp;
-<img src="metadata/Screenshot%202026-05-11%20at%2010.31.00.png" width="360" alt="RSS Inbox popover — dark mode" />
+## Install
 
-</div>
+**[⬇ Download the latest DMG](https://rss-inbox.szarbartosz.com)** — requires macOS 15+.
 
-## Requirements
+<details>
+<summary>Or build from source</summary>
 
-- macOS **15.0** (Sequoia) or later
-- Xcode **16** with Swift **5.10**
-
-## Build
+Requires Xcode 16.
 
 ```bash
-# 1. Generate the Xcode project
 xcodegen generate
-
-# 2. Build & run from Xcode (⌘R)
-open RSSInbox.xcodeproj
+open RSSInbox.xcodeproj   # ⌘R to run
 ```
 
-Or build from the command line:
+</details>
 
-```bash
-xcodebuild -scheme RSSInbox -destination 'platform=macOS' \
-  CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO build
-```
+<details>
+<summary><b>Architecture &amp; design notes</b></summary>
 
-## Test
-
-```bash
-xcodebuild test -scheme RSSInbox -destination 'platform=macOS' \
-  CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
-```
-
-The test suite covers OPML parsing, feed parsing (RSS 2.0 + Atom), the badge controller, and feed-poller integration (dedup, retention, network failure surfacing).
-
-## Architecture
-
-```
+```text
 RSSInbox/
 ├── AppDelegate.swift          NSPanel-backed status bar UI
 ├── RSSInboxApp.swift          SwiftUI App entry point
@@ -84,24 +64,31 @@ RSSInbox/
 └── Views/
     ├── PopoverView.swift      Menu-bar popover
     ├── ArticleRowView.swift   Full-row clickable article cell
-    ├── ReaderView.swift       (Optional) in-app reader
-    └── PreferencesView.swift  Feeds + General tabs (SMAppService)
+    ├── ReaderView.swift       In-app reader (optional)
+    └── PreferencesView.swift  Feeds + General tabs
 ```
 
-### Notable design choices
+- **`NSPanel` instead of `NSPopover`** — borderless, non-activating, manually positioned so the popover anchors to the status item across multi-monitor setups.
+- **`maskImage` for rounded corners** — `NSVisualEffectView` ignores `layer.cornerRadius` during certain compositing passes; a 9-part stretchable mask image survives the redraws.
+- **One `ModelContext` per logical owner** — the poller creates its own context per run; views use the SwiftUI environment context. SwiftData merges via the shared `ModelContainer`.
 
-- **`NSPanel` instead of `NSPopover`** — borderless, non-activating, with manual positioning so the popover anchors to the status item across multi-monitor setups.
-- **`maskImage` for rounded corners** — `NSVisualEffectView` ignores `layer.cornerRadius` during certain compositing passes; a 9-part stretchable mask image is the only reliable way to get rounded corners that survive redraws.
-- **One `ModelContext` per logical owner** — the poller creates its own context per run; the views use the SwiftUI environment context. SwiftData merges via the shared `ModelContainer`.
-
-## Configuration
-
-User-facing settings live in `UserDefaults` and the Preferences window:
+### Configuration
 
 | Key                   | Type | Default | Description                 |
 | --------------------- | ---- | ------- | --------------------------- |
 | `pollIntervalMinutes` | Int  | `15`    | Background polling interval |
 | `retentionLimit`      | Int  | `100`   | Max articles kept per feed  |
+
+### Tests
+
+```bash
+xcodebuild test -scheme RSSInbox -destination 'platform=macOS' \
+  CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+```
+
+Covers OPML parsing, feed parsing (RSS 2.0 + Atom), the badge controller, and feed-poller integration (dedup, retention, network failure surfacing).
+
+</details>
 
 ## License
 
