@@ -28,8 +28,8 @@ final class BadgeController {
         return image
     }
 
-    @MainActor private static let emptyMailbox = emojiImage("📪")
-    @MainActor private static let fullMailbox  = emojiImage("📫")
+    @MainActor private static let emptyMailbox = emojiImage("📭")
+    @MainActor private static let fullMailbox  = emojiImage("📬")
 
     @MainActor var statusImage: NSImage {
         hasUnread ? BadgeController.fullMailbox : BadgeController.emptyMailbox
